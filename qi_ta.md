@@ -1,4 +1,4 @@
-# 其他
+# 暂停正在播放的音乐
 
     public static void pauseMusic() {
 
