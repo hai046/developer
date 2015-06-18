@@ -6,7 +6,7 @@
 
 缺点：必须自己编解码，比MediaPlayer复杂
 
-声明：
+###声明：
 
     private synchronized AudioTrack getAudioTracker() {
 
@@ -30,6 +30,95 @@
 在android中如果你想切换播放模式 例如从听筒模式切换到外放模式的时候【修改StreamType】，必须重新初始化AudioTrack ，MediaPlayer亦然
 
 
+###播放
+
+其实就是mAudioTracker.write(buffer, 0, lg);来播放buffer里面的内容
+这个buffer必须是解码后的内容，必须是pcm格式
+
+例如如下code【本人使用opus编解码】
+
+
     
+    
+
+     while (!isExit()) {
+                lockWaitSyn();
+                if (isExit()) {
+                    break;
+                }
+
+                if (Log.DEBUG) {
+                    Log.d(TAG, "Wav player begin");
+                }
+
+                try {
+                    Utils.pauseMusic();
+                    AudioLib.getLock().writeLock().lock();
+                    registerSensor();
+                    if (isPlaying) {
+
+                        mAudioTracker = getAudioTracker();
+                        if (mAudioTracker.getState() == AudioTrack.STATE_INITIALIZED) {
+                            int readSize = 0;
+
+                            mAudioTracker.play();
+
+                            int minSize = AudioLib.initDecorder(mAudioFilePath, 0);
+                            if (minSize < 0) {
+                                Log.e(TAG, "initDecorder errr");
+                                break;
+                            }
+                            short[] buffer = new short[minSize];
+                            prepareAsync();
+                            while (isPlaying) {
+                                mAudioTrackPlaying = true;
+
+                                checkPlayMode();
+
+                                if (isPaused) {
+                                    mAudioTracker.pause();
+                                    if (isPlaying) {
+                                        mAudioTracker.play();
+                                    } else {
+                                        break;
+                                    }
+                                }
+                                int lg = 0;
+                                if ((lg = AudioLib.decorderRead(buffer, 0, buffer.length)) > 0) {
+                                    mAudioTracker.write(buffer, 0, lg);
+                                } else {
+                                    break;
+                                }
+                                mCurrentPosition += readSize;
+
+                            }
+                        }
+                    }
+                } catch (Throwable e) {
+                    Log.e(TAG, "Wav player handle exception");
+                    handleException(e);
+                    String log = "play failure cpu=" + Utils.getProcessorType() + " "
+                            + e.getMessage();
+                    StatisticsManager.getIntance().addCommonLog(log);
+                    StatisticsManager.getIntance().commit();
+                } finally {
+                    mAudioTrackPlaying = false;
+                    reachAudioFileEnd();
+                    AudioLib.destoryDecorder();
+                    AudioLib.getLock().writeLock().unlock();
+                    stopPlay();
+                    AudioPlayerController.getIntance().playComplete();
+                    unregisterSensor();
+                    if (Log.DEBUG) {
+                        Log.d(TAG, "Wav player end");
+                    }
+                }
+            }
+        }
+
+
+
+
+
     
     
