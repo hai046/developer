@@ -17,9 +17,11 @@ Android 4.2.1及其以后可以用系统自带的高斯模糊效果了
                     script.setInput(input);
                     script.forEach(output);
                     output.copyTo(bitmap);
+                    rs.destory();//必须要关闭，不然会内存泄露
                     return bitmap;
                 }
 ```
+
 
 系统直接提供，也是直接调用GPU来渲染处理，不过这样感觉比自己写更easy，另外还有其他的
 ```
