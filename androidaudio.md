@@ -118,7 +118,29 @@
 
 
 
+注意如果如果在声明的时候设置stremType  例如music/in_call模式  听筒会比较小，那么我们可以这样
+设置
 
+    mAudioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
+                mAudioManager.setSpeakerphoneOn(true/false);
+
+完整code:
+
+
+            if (mAudioManager != null) {
+                if (mStreamType == AudioManager.STREAM_MUSIC) {
+                    mAudioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
+                    mAudioManager.setSpeakerphoneOn(true);
+                } else if (mStreamType == AudioManager.STREAM_VOICE_CALL) {
+                    mAudioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
+                    mAudioManager.setSpeakerphoneOn(false);
+                }
+
+            }
+
+            mAudioTracker = new AudioTrack(AudioManager.STREAM_MUSIC, AudioLib.AUDIO_SAMPLE_RATE_IN_HZ,
+                    AudioFormat.CHANNEL_OUT_MONO, AudioLib.AUDIO_FORMAT, minBufferSize,
+                    AudioTrack.MODE_STREAM);
 
     
     
