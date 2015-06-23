@@ -4,4 +4,4 @@ Personal notes
 个人笔记
 
 
-http://hai046.gitbooks.io/developer/content/
+没有完善，暂时不对外开放
