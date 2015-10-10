@@ -13,4 +13,5 @@
    * [j2ee](j2ee.md)
    * 配置
        * [ganglia 安装](ganglia_an_zhuang.md)
+   * 使用笔记
 
