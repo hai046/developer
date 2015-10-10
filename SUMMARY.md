@@ -14,4 +14,5 @@
    * [配置](pei_zhi.md)
        * [ganglia 安装](ganglia_an_zhuang.md)
    * [使用笔记](shi_yong_bi_ji.md)
+       * ffmpeg 命令使用方法
 
