@@ -6,6 +6,7 @@
    * [ViewPager Fragment](viewpager_fragment.md)
    * [android_audio](androidaudio.md)
    * [其他](qi_ta.md)
+   * 在android使用lambda表达式
 * [Java](java.md)
    * [j2ee](j2ee.md)
 
