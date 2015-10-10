@@ -10,7 +10,6 @@
    * [Android OpenGL-ES GPUImage](android_opengl-es_gpuimage.md)
    * [OkHttpClient添加拦截器](okhttpclienttian_jia_lan_jie_qi.md)
 * [服务端](java.md)
-   * [j2ee](j2ee.md)
    * [配置](pei_zhi.md)
        * [ganglia 安装](ganglia_an_zhuang.md)
    * [使用笔记](shi_yong_bi_ji.md)
