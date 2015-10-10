@@ -12,4 +12,5 @@
 * [服务端](java.md)
    * [j2ee](j2ee.md)
    * 配置
+       * ganglia 安装
 
