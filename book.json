@@ -1,6 +1,4 @@
 {
-    "plugins": [
-        "splitter"
-    ],
+    "plugins": [],
     "pluginsConfig": {}
 }
