@@ -1,6 +1,4 @@
 {
-    "plugins": [
-        "gitbook-plugin-splitter"
-    ],
+    "plugins": [],
     "pluginsConfig": {}
 }
