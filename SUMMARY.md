@@ -15,5 +15,5 @@
    * [使用笔记](shi_yong_bi_ji.md)
        * [ffmpeg 命令使用方法](ffmpeg_ming_ling_shi_yong_fang_fa.md)
    * 技术
-       * netty 建立长连接
+       * [netty 建立长连接](netty_jian_li_chang_lian_jie.md)
 
