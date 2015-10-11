@@ -17,14 +17,14 @@
 
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
-                            // PushMessage转byte，必须放在first
+                            // PushMessage转byte，必须放在first，这个在服务端发送消息到客户端时候编码是调用
 
                             ch.pipeline().addFirst(pushMessageEncodeHander);
 
-                            // byte转成PushMessage
+                            // byte转成PushMessage  接受消息时候触发使用
                             ch.pipeline().addLast(new PushMessageDecodeHandler());
 
-                            //auth
+                            //auth ，处理 及其他逻辑处理
                             ch.pipeline().addLast(authHandlerAdapter);
 
                         }
@@ -46,5 +46,7 @@
 ```
 
 所有的处理就在3个adapter里面完成
+
+
 
 
