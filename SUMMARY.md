@@ -18,5 +18,5 @@
        * [ganglia 安装](ganglia_an_zhuang.md)
    * [使用笔记](shi_yong_bi_ji.md)
        * [ffmpeg 命令使用方法](ffmpeg_ming_ling_shi_yong_fang_fa.md)
-           * ffmpeg 实时视频流相关
+           * [ffmpeg 实时视频流相关](ffmpeg_shi_shi_shi_pin_liu_xiang_guan.md)
 
