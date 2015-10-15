@@ -1,5 +1,13 @@
 # ffmpeg 命令使用方法
 
+
+#使用ffmpeg 截取屏幕生成rtmp
+```
+ffmpeg -f avfoundation -i "1" -vcodec libx264 -preset ultrafast -acodec libfaac -f flv rtmp://localhost/live/STREAM_NAME
+```
+
+
+
 # 从视频截取image
 
 ```
