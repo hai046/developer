@@ -98,9 +98,6 @@ c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt)
 	go func() {
 		<-c
-		log.Println("Leaving multicast group...")
-		mc.LeaveMulticast()
-		log.Println("Quitting multicast discovery...")
 		os.Exit(0)
 	}()
 
