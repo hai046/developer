@@ -2,7 +2,7 @@
 
 ###官方网站：https://golang.org
 
-在线练习
+在线练习[需fanqiang]
 
 英文：https://tour.golang.org
 
