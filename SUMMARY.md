@@ -10,7 +10,7 @@
    * [Android OpenGL-ES GPUImage](android_opengl-es_gpuimage.md)
    * [OkHttpClient添加拦截器](okhttpclienttian_jia_lan_jie_qi.md)
    * [Android Design Support Library](android_design_support.md)
-* [服务端](java.md)
+* [服务端Java](java.md)
    * [技术](ji_zhu.md)
        * [netty 建立长链接](netty_jian_li_chang_lian_jie.md)
        * [java8新特性](java8xin_te_xing.md)
