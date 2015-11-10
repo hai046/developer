@@ -68,4 +68,26 @@ func main() {
 
 4，声明多少使用多少，不能多声明不使用
 
-5，
+5，线程关键字 go [func ]
+
+
+6,chan 
+
+```
+package main
+
+import "fmt"
+
+func main() {
+	ch := make(chan int, 2)
+	ch <- 1
+	ch <- 2
+	fmt.Println(<-ch)
+	fmt.Println(<-ch)
+}
+
+```
+
+结果：2，1
+
+
