@@ -91,3 +91,20 @@ func main() {
 结果：2，1
 
 
+7,线程挂起
+```
+
+c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt)
+	go func() {
+		<-c
+		log.Println("Leaving multicast group...")
+		mc.LeaveMulticast()
+		log.Println("Quitting multicast discovery...")
+		os.Exit(0)
+	}()
+
+	// Sleep forever in main goroutine
+	select {}
+```
+
