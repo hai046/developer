@@ -20,5 +20,6 @@
        * [ffmpeg 命令使用方法](ffmpeg_ming_ling_shi_yong_fang_fa.md)
            * [ffmpeg 实时视频流相关](ffmpeg_shi_shi_shi_pin_liu_xiang_guan.md)
 * [Golang](golang.md)
+   * [DES](des.md)  
    * [golang的不同](golangde_bu_tong.md)
-
+ 
