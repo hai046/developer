@@ -78,9 +78,9 @@ func DesImageEncrypt(id int64, productionEnviornment bool) string {
 	var key string;
 
 	if productionEnviornment {
-		key = "DicrJiFV9kg"
+		key = "xxxxx"
 	} else {
-		key = "D9gsCIXTm8Q"
+		key = "xxxxxx2"
 	}
 
 	base64er := base64.RawURLEncoding;
