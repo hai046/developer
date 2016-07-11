@@ -4,7 +4,7 @@ Android 4.2.1及其以后可以用系统自带的高斯模糊效果了
 
 
 
-```
+```java
  if (Build.VERSION.SDK_INT > 16) {
                     bitmap = bitmap.copy(bitmap.getConfig(), true);
                     final RenderScript rs = RenderScript.create(AppContext.getContext());
