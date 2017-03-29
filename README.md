@@ -8,7 +8,7 @@ Personal notes
 
 
 
-http://denghaizhu.com/
+http://t.denghaizhu.com/
 
 
 使用 https://github.com/GitbookIO/gitbook 
